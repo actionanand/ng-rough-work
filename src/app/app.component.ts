@@ -75,18 +75,13 @@ export class AppComponent implements OnInit {
       this.fruitCheckboxAr.push(new FormControl(e.target.value));
     } else {
 
-      // let i: number = 0;
-      // this.fruitCheckboxAr.controls.forEach((item: FormControl) => {
-      //   if (item.value == e.target.value) {
-      //     this.fruitCheckboxAr.removeAt(i);
-      //     return;
-      //   }
-      //   i++;
-      // });
-
+      let i: number = 0;
       this.fruitCheckboxAr.controls.forEach((item: FormControl) => {
-        let index = this.fruitCheckboxAr.controls.indexOf(item);
-        this.fruitCheckboxAr.removeAt(index);
+        if (item.value == e.target.value) {
+          this.fruitCheckboxAr.removeAt(i);
+          return;
+        }
+        i++;
       });
     }
   }
