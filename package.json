@@ -5,6 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "develop": "ng serve --disable-host-check",
+    "build:gh": "ng build --base-href /ng-rough-work/",
+    "copy-error-page": "cp dist/ng-rough-work/index.html dist/ng-rough-work/404.html",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -43,5 +46,8 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
+  },
+  "engines": {
+    "node": "10.13.0"
   }
 }
