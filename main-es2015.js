@@ -151,17 +151,13 @@ let AppComponent = class AppComponent {
             this.fruitCheckboxAr.push(new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](e.target.value));
         }
         else {
-            // let i: number = 0;
-            // this.fruitCheckboxAr.controls.forEach((item: FormControl) => {
-            //   if (item.value == e.target.value) {
-            //     this.fruitCheckboxAr.removeAt(i);
-            //     return;
-            //   }
-            //   i++;
-            // });
+            let i = 0;
             this.fruitCheckboxAr.controls.forEach((item) => {
-                let index = this.fruitCheckboxAr.controls.indexOf(item);
-                this.fruitCheckboxAr.removeAt(index);
+                if (item.value == e.target.value) {
+                    this.fruitCheckboxAr.removeAt(i);
+                    return;
+                }
+                i++;
             });
         }
     }

@@ -155,17 +155,13 @@ var AppComponent = /** @class */ (function () {
             this.fruitCheckboxAr.push(new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](e.target.value));
         }
         else {
-            // let i: number = 0;
-            // this.fruitCheckboxAr.controls.forEach((item: FormControl) => {
-            //   if (item.value == e.target.value) {
-            //     this.fruitCheckboxAr.removeAt(i);
-            //     return;
-            //   }
-            //   i++;
-            // });
+            var i_1 = 0;
             this.fruitCheckboxAr.controls.forEach(function (item) {
-                var index = _this.fruitCheckboxAr.controls.indexOf(item);
-                _this.fruitCheckboxAr.removeAt(index);
+                if (item.value == e.target.value) {
+                    _this.fruitCheckboxAr.removeAt(i_1);
+                    return;
+                }
+                i_1++;
             });
         }
     };
